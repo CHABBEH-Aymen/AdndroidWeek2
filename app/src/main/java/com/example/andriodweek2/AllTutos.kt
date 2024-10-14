@@ -8,6 +8,9 @@ fun main() {
     tuto101(userName, password)
     tuto102(password)
     tuto103()
+    tuto104({
+        println("This is a lambda")
+    })
 }
 
 fun tuto101(userName: String, password: String): Unit
@@ -26,44 +29,17 @@ fun tuto103()
 {
     val car = Car("red", "mrecidce", "benz", "v12")
     car.run()
-    class Car(var color: String, var type: String, var model: String, var engine: String)
+}
+
+fun tuto104(function: Function<Unit>)
+{
+    function
+}
+
+class Car(var color: String, var type: String, var model: String, var engine: String)
+{
+    public fun run()
     {
-
-        public fun run(){
-            println("the $type $model $color car is going off with engine of $engine")
-        }
-
-        public fun getColor(): String
-        {
-            return this.color
-        }
-        public fun setColor(color: String)
-        {
-            this.color = color
-        }
-        public fun getType(): String
-        {
-            return this.type
-        }
-        public fun setType(type: String)
-        {
-            this.type = type
-        }
-        public fun getModel(): String
-        {
-        return this.model
-        }
-        public fun setModel(model: String)
-        {
-            this.model = model
-        }
-        public fun getEngine(): String
-        {
-        return this.engine
-        }
-        public fun setEngine(engine: String)
-        {
-            this.engine = engine
-        }
+        println("the $type $model $color car is going off with engine of $engine")
     }
 }
