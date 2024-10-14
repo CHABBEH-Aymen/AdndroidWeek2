@@ -8,8 +8,8 @@ fun main() {
     tuto101(userName, password)
     tuto102(password)
     tuto103()
-    tuto104({
-        println("This is a lambda")
+    tuto104 ("This is a Lambda", { s ->
+        println(s)
     })
 }
 
@@ -31,11 +31,12 @@ fun tuto103()
     car.run()
 }
 
-fun tuto104(function: Function<Unit>)
-{
-    function
-}
+fun tuto104(s: String, f:(s:String)->Unit) = f(s)
 
+
+/*
+* Class of Tuto 1.3
+* */
 class Car(var color: String, var type: String, var model: String, var engine: String)
 {
     public fun run()
