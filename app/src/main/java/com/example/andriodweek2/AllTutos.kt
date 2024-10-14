@@ -1,7 +1,5 @@
 package com.example.andriodweek2
 
-import android.R
-
 fun main() {
     val userName = "Aymen"
     val  password = "12345678"
