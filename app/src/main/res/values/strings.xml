@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AndriodWeek2</string>
+    <string name="title_activity_scond">ScondActivity</string>
 </resources>
