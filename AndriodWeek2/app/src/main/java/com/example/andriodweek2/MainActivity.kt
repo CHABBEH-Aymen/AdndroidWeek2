@@ -1,5 +1,6 @@
 package com.example.andriodweek2
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -24,6 +25,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.andriodweek2.ui.theme.AndriodWeek2Theme
 
 class MainActivity : ComponentActivity() {
@@ -31,20 +34,17 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            AndriodWeek2Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Page(
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+            Navigation()
+//            AndriodWeek2Theme {
+//                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+//                }
+//            }
         }
     }
 }
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun Page(modifier: Modifier = Modifier) {
-    val context = LocalContext.current
+fun Page(modifier: Modifier = Modifier, navController: NavController = rememberNavController()) {
     val dice = remember() { mutableIntStateOf(R.drawable.dice_1) }
     Column (Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.SpaceAround){
         Text("This is The Dice Roller Game")
@@ -56,7 +56,7 @@ fun Page(modifier: Modifier = Modifier) {
         }
         Row (Modifier.fillMaxWidth())
         {
-            Button(onClick = { context.startActivity(Intent(context, SecondActivity::class.java)) }, Modifier.padding(start = 8.dp)) {
+            Button(onClick = { navController.navigate(Screen.SecondScreen.route) }, Modifier.padding(start = 8.dp)) {
                 Text("Tuto 2.3 >")
             }
         }
