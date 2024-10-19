@@ -1,0 +1,84 @@
+File: [1mSecondActivity.kt[0m
+[38;2;249;38;114mpackage[0m[38;2;248;248;242m [0m[38;2;166;226;46mcom.example.andriodweek2[0m
+
+[38;2;249;38;114mimport[0m[38;2;248;248;242m androidx.compose.foundation.Image[0m
+[38;2;249;38;114mimport[0m[38;2;248;248;242m androidx.compose.foundation.background[0m
+[38;2;249;38;114mimport[0m[38;2;248;248;242m androidx.compose.foundation.clickable[0m
+[38;2;249;38;114mimport[0m[38;2;248;248;242m androidx.compose.foundation.layout.Arrangement[0m
+[38;2;249;38;114mimport[0m[38;2;248;248;242m androidx.compose.foundation.layout.Column[0m
+[38;2;249;38;114mimport[0m[38;2;248;248;242m androidx.compose.foundation.layout.PaddingValues[0m
+[38;2;249;38;114mimport[0m[38;2;248;248;242m androidx.compose.foundation.layout.Row[0m
+[38;2;249;38;114mimport[0m[38;2;248;248;242m androidx.compose.foundation.layout.fillMaxSize[0m
+[38;2;249;38;114mimport[0m[38;2;248;248;242m androidx.compose.foundation.layout.fillMaxWidth[0m
+[38;2;249;38;114mimport[0m[38;2;248;248;242m androidx.compose.foundation.layout.height[0m
+[38;2;249;38;114mimport[0m[38;2;248;248;242m androidx.compose.material3.Button[0m
+[38;2;249;38;114mimport[0m[38;2;248;248;242m androidx.compose.material3.Scaffold[0m
+[38;2;249;38;114mimport[0m[38;2;248;248;242m androidx.compose.material3.Text[0m
+[38;2;249;38;114mimport[0m[38;2;248;248;242m androidx.compose.runtime.Composable[0m
+[38;2;249;38;114mimport[0m[38;2;248;248;242m androidx.compose.runtime.mutableIntStateOf[0m
+[38;2;249;38;114mimport[0m[38;2;248;248;242m androidx.compose.runtime.mutableStateOf[0m
+[38;2;249;38;114mimport[0m[38;2;248;248;242m androidx.compose.runtime.remember[0m
+[38;2;249;38;114mimport[0m[38;2;248;248;242m androidx.compose.ui.Alignment[0m
+[38;2;249;38;114mimport[0m[38;2;248;248;242m androidx.compose.ui.Modifier[0m
+[38;2;249;38;114mimport[0m[38;2;248;248;242m androidx.compose.ui.graphics.Color[0m
+[38;2;249;38;114mimport[0m[38;2;248;248;242m androidx.compose.ui.res.painterResource[0m
+[38;2;249;38;114mimport[0m[38;2;248;248;242m androidx.compose.ui.text.font.FontWeight[0m
+[38;2;249;38;114mimport[0m[38;2;248;248;242m androidx.compose.ui.tooling.preview.Preview[0m
+[38;2;249;38;114mimport[0m[38;2;248;248;242m androidx.compose.ui.unit.dp[0m
+[38;2;249;38;114mimport[0m[38;2;248;248;242m androidx.navigation.NavController[0m
+[38;2;249;38;114mimport[0m[38;2;248;248;242m androidx.navigation.compose.rememberNavController[0m
+[38;2;249;38;114mimport[0m[38;2;248;248;242m com.example.andriodweek2.ui.theme.AndriodWeek2Theme[0m
+[38;2;248;248;242m@Preview(showBackground [0m[38;2;249;38;114m=[0m[38;2;248;248;242m [0m[38;2;190;132;255mtrue[0m[38;2;248;248;242m, showSystemUi [0m[38;2;249;38;114m=[0m[38;2;248;248;242m [0m[38;2;190;132;255mtrue[0m[38;2;248;248;242m)[0m
+[38;2;248;248;242m@Composable[0m
+[38;2;249;38;114mfun[0m[38;2;248;248;242m [0m[38;2;166;226;46mSecondPage[0m[38;2;248;248;242m([0m[38;2;253;151;31mmodifier[0m[38;2;249;38;114m:[0m[38;2;248;248;242m Modifier [0m[38;2;249;38;114m=[0m[38;2;248;248;242m Modifier, [0m[38;2;253;151;31mnavController[0m[38;2;249;38;114m:[0m[38;2;248;248;242m NavController [0m[38;2;249;38;114m=[0m[38;2;248;248;242m rem[0m
+[38;2;248;248;242memberNavController()) {[0m
+[38;2;248;248;242m    [0m[38;2;249;38;114mval[0m[38;2;248;248;242m [0m[38;2;166;226;46mcomponents[0m[38;2;248;248;242m [0m[38;2;249;38;114m=[0m[38;2;248;248;242m remember { mutableIntStateOf([0m[38;2;190;132;255m1[0m[38;2;248;248;242m) }[0m
+[38;2;248;248;242m    AndriodWeek2Theme {[0m
+[38;2;248;248;242m        Scaffold(modifier [0m[38;2;249;38;114m=[0m[38;2;248;248;242m Modifier[0m[38;2;249;38;114m.[0m[38;2;248;248;242mfillMaxSize(), topBar [0m[38;2;249;38;114m=[0m[38;2;248;248;242m {TopBar()}) { inner[0m
+[38;2;248;248;242mPadding [0m[38;2;249;38;114m->[0m
+[38;2;248;248;242m            [0m[38;2;249;38;114mwhen[0m[38;2;248;248;242m (States[0m[38;2;249;38;114m.[0m[38;2;248;248;242mlemonState[0m[38;2;249;38;114m.[0m[38;2;248;248;242mvalue){[0m
+[38;2;248;248;242m                [0m[38;2;190;132;255m1[0m[38;2;249;38;114m->[0m[38;2;248;248;242m Leamon(innerPadding, R[0m[38;2;249;38;114m.[0m[38;2;248;248;242mdrawable[0m[38;2;249;38;114m.[0m[38;2;248;248;242mlemon_tree, [0m[38;2;230;219;116m"[0m[38;2;230;219;116mTab the lemon t[0m
+[38;2;230;219;116mree to select a lemon[0m[38;2;230;219;116m"[0m[38;2;248;248;242m)[0m
+[38;2;248;248;242m                [0m[38;2;190;132;255m2[0m[38;2;249;38;114m->[0m[38;2;248;248;242m Leamon(innerPadding, R[0m[38;2;249;38;114m.[0m[38;2;248;248;242mdrawable[0m[38;2;249;38;114m.[0m[38;2;248;248;242mlemon_squeeze, [0m[38;2;230;219;116m"[0m[38;2;230;219;116mTab the lemo[0m
+[38;2;230;219;116mn tree to select a lemon[0m[38;2;230;219;116m"[0m[38;2;248;248;242m)[0m
+[38;2;248;248;242m                [0m[38;2;190;132;255m3[0m[38;2;249;38;114m->[0m[38;2;248;248;242m Leamon(innerPadding, R[0m[38;2;249;38;114m.[0m[38;2;248;248;242mdrawable[0m[38;2;249;38;114m.[0m[38;2;248;248;242mlemon_drink, [0m[38;2;230;219;116m"[0m[38;2;230;219;116mTab the lemon [0m
+[38;2;230;219;116mtree to select a lemon[0m[38;2;230;219;116m"[0m[38;2;248;248;242m)[0m
+[38;2;248;248;242m                [0m[38;2;190;132;255m4[0m[38;2;249;38;114m->[0m[38;2;248;248;242m Leamon(innerPadding, R[0m[38;2;249;38;114m.[0m[38;2;248;248;242mdrawable[0m[38;2;249;38;114m.[0m[38;2;248;248;242mlemon_restart, [0m[38;2;230;219;116m"[0m[38;2;230;219;116mTab the lemo[0m
+[38;2;230;219;116mn tree to select a lemon[0m[38;2;230;219;116m"[0m[38;2;248;248;242m)[0m
+[38;2;248;248;242m            }[0m
+[38;2;248;248;242m        }[0m
+[38;2;248;248;242m    }[0m
+[38;2;248;248;242m}[0m
+[38;2;248;248;242m@Composable[0m
+[38;2;249;38;114mfun[0m[38;2;248;248;242m [0m[38;2;166;226;46mTopBar[0m[38;2;248;248;242m(){[0m
+[38;2;248;248;242m    Row ([0m
+[38;2;248;248;242m        Modifier[0m
+[38;2;248;248;242m            [0m[38;2;249;38;114m.[0m[38;2;248;248;242mfillMaxWidth()[0m
+[38;2;248;248;242m            [0m[38;2;249;38;114m.[0m[38;2;248;248;242mbackground(Color[0m[38;2;249;38;114m.[0m[38;2;248;248;242mYellow)[0m
+[38;2;248;248;242m            [0m[38;2;249;38;114m.[0m[38;2;248;248;242mheight([0m[38;2;190;132;255m30.[0m[38;2;248;248;242mdp), verticalAlignment [0m[38;2;249;38;114m=[0m[38;2;248;248;242m Alignment[0m[38;2;249;38;114m.[0m[38;2;248;248;242mCenterVertically, hori[0m
+[38;2;248;248;242mzontalArrangement [0m[38;2;249;38;114m=[0m[38;2;248;248;242m Arrangement[0m[38;2;249;38;114m.[0m[38;2;248;248;242mSpaceAround){[0m
+[38;2;248;248;242m        Text([0m[38;2;230;219;116m"[0m[38;2;230;219;116mLemonade[0m[38;2;230;219;116m"[0m[38;2;248;248;242m, fontWeight [0m[38;2;249;38;114m=[0m[38;2;248;248;242m FontWeight[0m[38;2;249;38;114m.[0m[38;2;248;248;242mBold)[0m
+[38;2;248;248;242m    }[0m
+[38;2;248;248;242m}[0m
+[38;2;248;248;242m@Composable[0m
+[38;2;249;38;114mfun[0m[38;2;248;248;242m [0m[38;2;166;226;46mLeamon[0m[38;2;248;248;242m([0m[38;2;253;151;31mpadding[0m[38;2;249;38;114m:[0m[38;2;248;248;242m PaddingValues, [0m[38;2;253;151;31mimage[0m[38;2;249;38;114m:[0m[38;2;248;248;242m [0m[38;2;102;217;239mInt[0m[38;2;248;248;242m, [0m[38;2;253;151;31mtext[0m[38;2;249;38;114m:[0m[38;2;248;248;242m [0m[38;2;102;217;239mString[0m[38;2;248;248;242m)[0m
+[38;2;248;248;242m{[0m
+[38;2;248;248;242m    Column (Modifier[0m[38;2;249;38;114m.[0m[38;2;248;248;242mfillMaxSize(), horizontalAlignment [0m[38;2;249;38;114m=[0m[38;2;248;248;242m Alignment[0m[38;2;249;38;114m.[0m[38;2;248;248;242mCenterHorizo[0m
+[38;2;248;248;242mntally, verticalArrangement [0m[38;2;249;38;114m=[0m[38;2;248;248;242m Arrangement[0m[38;2;249;38;114m.[0m[38;2;248;248;242mSpaceAround){[0m
+[38;2;248;248;242m        Image([0m
+[38;2;248;248;242m            painter [0m[38;2;249;38;114m=[0m[38;2;248;248;242m painterResource(image),[0m
+[38;2;248;248;242m            contentDescription [0m[38;2;249;38;114m=[0m[38;2;248;248;242m [0m[38;2;230;219;116m"[0m[38;2;230;219;116mLeamon Image[0m[38;2;230;219;116m"[0m[38;2;248;248;242m,[0m
+[38;2;248;248;242m            Modifier[0m[38;2;249;38;114m.[0m[38;2;248;248;242mclickable(onClick [0m[38;2;249;38;114m=[0m[38;2;248;248;242m {[0m
+[38;2;248;248;242m                [0m[38;2;249;38;114mif[0m[38;2;248;248;242m (States[0m[38;2;249;38;114m.[0m[38;2;248;248;242mlemonState[0m[38;2;249;38;114m.[0m[38;2;248;248;242mvalue [0m[38;2;249;38;114m==[0m[38;2;248;248;242m [0m[38;2;190;132;255m4[0m[38;2;248;248;242m) States[0m[38;2;249;38;114m.[0m[38;2;248;248;242mlemonState[0m[38;2;249;38;114m.[0m[38;2;248;248;242mvalue [0m[38;2;249;38;114m=[0m[38;2;248;248;242m [0m[38;2;190;132;255m1[0m
+[38;2;248;248;242m                [0m[38;2;249;38;114melse[0m[38;2;248;248;242m States[0m[38;2;249;38;114m.[0m[38;2;248;248;242mlemonState[0m[38;2;249;38;114m.[0m[38;2;248;248;242mvalue[0m[38;2;249;38;114m++[0m
+[38;2;248;248;242m            })[0m
+[38;2;248;248;242m        )[0m
+[38;2;248;248;242m        Text(text [0m[38;2;249;38;114m=[0m[38;2;248;248;242m text)[0m
+[38;2;248;248;242m    }[0m
+[38;2;248;248;242m}[0m
+
+[38;2;249;38;114mobject[0m[38;2;248;248;242m [0m[38;2;166;226;46mStates[0m[38;2;248;248;242m{[0m
+[38;2;248;248;242m    [0m[38;2;249;38;114mval[0m[38;2;248;248;242m [0m[38;2;166;226;46mlemonState[0m[38;2;248;248;242m [0m[38;2;249;38;114m=[0m[38;2;248;248;242m mutableStateOf([0m[38;2;190;132;255m1[0m[38;2;248;248;242m)[0m
+[38;2;248;248;242m}[0m
+
+
